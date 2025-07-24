@@ -32,10 +32,6 @@ export class CadastroComponent {
   }
 
   onSubmit(): void{
-    alert("Chamou!");
-    console.log('Submit chamado');
-  console.log('Form válido?', this.formGroup.valid);
-  console.log('Form valores:', this.formGroup.value);
 
   const controls = this.formGroup.controls;
   for (const name in controls) {
@@ -49,7 +45,6 @@ export class CadastroComponent {
     return;
   }
     if(this.formGroup.valid){
-      alert("entrou!");
       const formValue = this.formGroup.value;
       
       this.objeto = new Cliente();
@@ -70,7 +65,6 @@ export class CadastroComponent {
         }
       });
     }else{
-      alert("Não entrou!");
     }
   }
 
