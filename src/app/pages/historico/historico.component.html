@@ -1,0 +1,26 @@
+<div class="container my-4">
+    <button type="button" class="btn btn-secondary mb-3" (click)="voltar()">
+        <i class="fas fa-arrow-left"></i> Voltar
+      </button>
+      <div class="d-flex align-items-center justify-content-between mb-4 border-bottom border-3 border-danger">
+        <h2 class="mb-1 ">Historico</h2>
+        <div *ngIf="cliente"><strong>Cliente:</strong> <span class="text-danger">{{cliente.nome}}</span></div>
+      </div>  
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover align-middle text-center">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Data de Acesso</th>
+            <th scope="col">IP de Acesso</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr *ngFor="let objeto of lista">
+            <td><small>{{ objeto.dataAcesso }}</small></td>
+            <td class="text-break">{{ objeto.ipAcesso }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <button type="button" class="btn btn-secondary mb-3" (click)="voltar()">
+        <i class="fas fa-arrow-left"></i> Voltar
+      </button>
+      <div class="d-flex align-items-center justify-content-between mb-4 border-bottom border-3 border-danger">
+        <h2 class="mb-1 ">Pix</h2>
+        <div *ngIf="cliente"><strong>Cliente:</strong> <span class="text-danger">{{cliente.nome}}</span></div>
+      </div>  
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <div class="row align-items-end">
+          <div class="col-md-3">
+            <label for="tipo" class="form-label">Contas</label>
+            <select class="form-select" formControlName="contaOrigem">
+              <option [ngValue]="null" disabled selected>Selecione uma conta origem</option>
+              <option *ngFor="let conta of lista" [ngValue]="conta">{{ conta.numero }}</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="valor" class="form-label">Chave pix</label>
+            <input id="valor" type="text" class="form-control" formControlName="contaDestino">
+          </div>
+        
+          <div class="col-md-3">
+            <label for="valor" class="form-label">Valor</label>
+            <input id="valor" type="text" mask="separator" prefix="R$ " thousandSeparator="."   decimalMarker="," placeholder="R$ 0,00" class="form-control" formControlName="valor">
+          </div>
+        
+          <div class="col-md-3 d-flex justify-content-start">
+            <button type="submit" class="btn btn-success mt-4">Atualizar</button>
+          </div>
+        </div>
+      </form>
+    </div>

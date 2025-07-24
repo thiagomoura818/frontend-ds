@@ -1,0 +1,40 @@
+<div class="container mt-4 border p-3 shadow">
+    <div class="d-flex justify-content-between align-items-center mb-3" >
+      <h5>OBank: O Banco que Entende Você.</h5>
+      <div *ngIf="cliente"><strong>Cliente:</strong> <span class="text-danger">{{cliente.nome}}</span></div>
+    </div>
+  
+    <div class="row text-center g-3">
+      <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" (click)="irContas()">Contas</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" (click)="irSaque()">Saque</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" (click)="irDeposito()">Depósito</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" (click)="irTransferencia()">Transferência</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" (click)="irPix()">Pix</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" (click)="irExtrato()">Extrato</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" (click)="irHistorico()">Acessos</button>
+      </div>
+      <div class="col-6 col-md-3">
+        <button class="btn btn-danger w-100" (click)="sair()">Sair</button>
+      </div>
+    </div>
+  
+    <div class="mt-4 text-end">
+      <strong>Saldo total das contas:</strong>
+      <div *ngIf="saldoTotal"><span class="text-danger fw-bold">{{ saldoTotal|currency:'BRL':'symbol':'1.2-2' }}</span></div>
+      
+    </div>
+  </div>
+  

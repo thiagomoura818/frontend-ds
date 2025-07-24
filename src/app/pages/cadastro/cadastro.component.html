@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  
+  <button type="button" class="btn btn-secondary mb-3" (click)="voltar()">
+    <i class="fas fa-arrow-left"></i> Voltar
+  </button>
+<h2 class="mb-4 border-bottom border-3 border-danger">Cadastro de Usuário</h2>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+
+      <input type="hidden" formControlName="id">
+
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" formControlName="nome" class="form-control" id="nome" placeholder="Digite seu nome">
+      </div>
+  
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" formControlName="email" id="email" placeholder="exemplo@email.com">
+      </div>
+  
+      <div class="mb-3">
+        <label for="cpf" class="form-label">CPF</label>
+        <input type="text" mask="000.000.000-00" class="form-control" id="cpf" formControlName="cpf" placeholder="000.000.000-00">
+      </div>
+  
+      <div class="mb-3">
+        <label for="telefone" class="form-label">Telefone</label>
+        <input type="tel"  mask="(00) 00000-0000" class="form-control" id="telefone" placeholder="(00) 00000-0000" formControlName="telefone">
+      </div>
+  
+      <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" formControlName="senha">
+      </div>
+  
+      <button type="submit" class="btn btn-success" >Cadastrar</button>
+    </form>
+</div>
+  
