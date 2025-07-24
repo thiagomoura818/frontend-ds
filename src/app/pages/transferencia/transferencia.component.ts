@@ -51,9 +51,6 @@ lista: Conta[] = [];
     this.operacao.conta2 = formulario.contaDestino
     this.operacao.valor = formulario.valor;
 
-    alert(this.operacao.conta1);
-    alert(this.operacao.conta2);
-
     this.service.transferencia(this.operacao).subscribe({
       next: () => {
         alert("Transferencia realizada com sucesso");

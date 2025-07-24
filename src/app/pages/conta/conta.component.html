@@ -1,4 +1,16 @@
-<div class="container mt-4">
+<div class="mt-5 d-flex align-items-center justify-content-center">
+  <i class="fas fa-rocket fa-6x text-indigo-600 me-4"></i>
+  <div>
+    <h2 class="text-2xl font-bold text-gray-800 mb-2">O banco em que se pode confiar</h2>
+    <h5 class="text-gray-600">
+      "Porque para mim o viver é Cristo, e o morrer é ganho."
+      <br>
+      <small>Filipenses 1:21</small>
+    </h5>
+  </div>
+</div>
+
+<div class="container mt-4 p-4">
   <button type="button" class="btn btn-secondary mb-3" (click)="voltar()">
     <i class="fas fa-arrow-left"></i> Voltar
   </button>
@@ -30,8 +42,9 @@
       </tbody>
     </table>
 
-    <form [formGroup]="formGroup2" (ngSubmit)="onSubmit2()">
-      <h4>Atualizar Limte de Crédito</h4>
+    <div class="mt-5">
+      <form [formGroup]="formGroup2" (ngSubmit)="onSubmit2()">
+      <h4>Atualizar Limite de Crédito</h4>
       <div class="row align-items-end">
         <div class="col-md-4">
           <label for="tipo" class="form-label">Contas</label>
@@ -55,6 +68,7 @@
       
 
     </form>
+    </div>
 
     <div class="mt-5">
       <form [formGroup]="formGroup3" (ngSubmit)="onSubmit3()" c>
@@ -77,10 +91,7 @@
             <button type="submit" class="btn btn-success mt-4">Atualizar</button>
           </div>
         </div>
-        
-  
-        
-  
+           
       </form>
     </div>
   </div>

@@ -51,9 +51,6 @@ export class PixComponent {
     this.operacao.conta2 = formulario.contaDestino
     this.operacao.valor = formulario.valor;
 
-    alert(this.operacao.conta1);
-    alert(this.operacao.conta2);
-
     this.service.pix(this.operacao).subscribe({
       next: () => {
         alert("Pix realizado com sucesso");

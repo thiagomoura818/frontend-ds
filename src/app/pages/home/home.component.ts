@@ -15,7 +15,7 @@ import { ContaService } from '../../services/conta.service';
 })
 export class HomeComponent {
   cliente!: Cliente;
-  saldoTotal!: number;
+  saldoTotal: number = 0;
 
   constructor(private router: Router, private loginService: LoginService, private clienteService: ClienteService, private contaService : ContaService) {
     

@@ -1,40 +1,89 @@
+<div class="mt-5 d-flex align-items-center justify-content-center">
+  <i class="fas fa-rocket fa-6x text-indigo-600 me-4"></i>
+  <div>
+    <h2 class="text-2xl font-bold text-gray-800 mb-2">O banco em que se pode confiar</h2>
+    <h5 class="text-gray-600">
+      "Porque para mim o viver é Cristo, e o morrer é ganho."
+      <br>
+      <small>Filipenses 1:21</small>
+    </h5>
+  </div>
+</div>
+
 <div class="container mt-4 border p-3 shadow">
-    <div class="d-flex justify-content-between align-items-center mb-3" >
-      <h5>OBank: O Banco que Entende Você.</h5>
-      <div *ngIf="cliente"><strong>Cliente:</strong> <span class="text-danger">{{cliente.nome}}</span></div>
-    </div>
   
-    <div class="row text-center g-3">
-      <div class="col-6 col-md-3">
-        <button class="btn btn-outline-primary w-100" (click)="irContas()">Contas</button>
-      </div>
-      <div class="col-6 col-md-3">
-        <button class="btn btn-outline-primary w-100" (click)="irSaque()">Saque</button>
-      </div>
-      <div class="col-6 col-md-3">
-        <button class="btn btn-outline-primary w-100" (click)="irDeposito()">Depósito</button>
-      </div>
-      <div class="col-6 col-md-3">
-        <button class="btn btn-outline-primary w-100" (click)="irTransferencia()">Transferência</button>
-      </div>
-      <div class="col-6 col-md-3">
-        <button class="btn btn-outline-primary w-100" (click)="irPix()">Pix</button>
-      </div>
-      <div class="col-6 col-md-3">
-        <button class="btn btn-outline-primary w-100" (click)="irExtrato()">Extrato</button>
-      </div>
-      <div class="col-6 col-md-3">
-        <button class="btn btn-outline-primary w-100" (click)="irHistorico()">Acessos</button>
-      </div>
-      <div class="col-6 col-md-3">
-        <button class="btn btn-danger w-100" (click)="sair()">Sair</button>
-      </div>
-    </div>
-  
-    <div class="mt-4 text-end">
-      <strong>Saldo total das contas:</strong>
-      <div *ngIf="saldoTotal"><span class="text-danger fw-bold">{{ saldoTotal|currency:'BRL':'symbol':'1.2-2' }}</span></div>
-      
+  <div class="text-center align-items-center mb-3">
+    
+    <div *ngIf="cliente" class="text-center">
+      <strong>Cliente:</strong> <span class="text-danger">{{cliente.nome}}</span>
     </div>
   </div>
-  
+
+  <div class="row text-center g-3">
+    <div class="col-6 col-md-3">
+      <button class="btn btn-outline-primary w-100" (click)="irContas()">
+        <i class="fas fa-wallet fa-2x mb-2"></i><br>
+        Contas
+      </button>
+    </div>
+    <div class="col-6 col-md-3">
+      <button class="btn btn-outline-primary w-100" (click)="irSaque()">
+        <i class="fas fa-hand-holding-usd fa-2x mb-2"></i><br>
+        Saque
+      </button>
+    </div>
+    <div class="col-6 col-md-3">
+      <button class="btn btn-outline-primary w-100" (click)="irDeposito()">
+        <i class="fas fa-piggy-bank fa-2x mb-2"></i><br>
+        Depósito
+      </button>
+    </div>
+    <div class="col-6 col-md-3">
+      <button class="btn btn-outline-primary w-100" (click)="irTransferencia()">
+        <i class="fas fa-exchange-alt fa-2x mb-2"></i><br>
+        Transferência
+      </button>
+    </div>
+    <div class="col-6 col-md-3">
+      <button class="btn btn-outline-primary w-100" (click)="irPix()">
+        <i class="fas fa-qrcode fa-2x mb-2"></i><br>
+        Pix
+      </button>
+    </div>
+    <div class="col-6 col-md-3">
+      <button class="btn btn-outline-primary w-100" (click)="irExtrato()">
+        <i class="fas fa-receipt fa-2x mb-2"></i><br>
+        Extrato
+      </button>
+    </div>
+    <div class="col-6 col-md-3">
+      <button class="btn btn-outline-primary w-100" (click)="irHistorico()">
+        <i class="fas fa-history fa-2x mb-2"></i><br>
+        Acessos
+      </button>
+    </div>
+    <div class="col-6 col-md-3">
+      <button class="btn btn-outline-danger w-100" (click)="sair()">
+        <i class="fas fa-sign-out-alt fa-2x mb-2"></i><br>
+        Sair
+      </button>
+    </div>
+  </div>
+
+  <div class="mt-4 text-end">
+    <strong>Saldo total das contas:</strong>
+    <div *ngIf="saldoTotal !== null && saldoTotal !== undefined">
+      <span 
+  [ngClass]="{
+    'text-success': saldoTotal > 0,
+    'text-danger': saldoTotal < 0,
+    'text-secondary': saldoTotal === 0
+  }"
+  class="fw-bold"
+>
+  {{ saldoTotal | currency:'BRL':'symbol':'1.2-2' }}
+</span>
+
+    </div>
+  </div>
+</div>
